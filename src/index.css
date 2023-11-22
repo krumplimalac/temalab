@@ -1,0 +1,104 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(134, 168, 134, 0.87);
+  background-color: #52361c;
+
+ /* font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;*/
+  
+}
+
+h6 {
+  color :#814d18
+}
+
+
+a {
+  font-weight: 500;
+  color: #d4734d;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #994e31;
+}
+
+body {
+  margin: 0;
+  
+  place-items: center;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  color:#ffd19d
+}
+
+button {
+  border-radius: 40em;
+  border: 100px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 5em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #ebd6d6;
+  cursor: pointer;
+  transition: border-color 1s;
+  transition: border-radius 1s;
+}
+button:hover {
+  border-color: #757575;
+  border-radius: 1em;
+  transition: border-radius 1s;
+
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+header {
+  margin: 0px;
+  background-color: #4d521c;
+  color: #30251a;
+  border-radius: 0px;
+  
+}
+
+header a {
+  padding: 0px;
+}
+
+
+.MuiToolbar-root{
+  padding: 0px 0px;
+  background-color: #4d521c;
+  color: #30251a;
+  border-radius: 10px;
+  display: flex;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #502b08;
+    background-color: #d49b59;
+  }
+  header {
+    background-color: #b3852f;
+  }
+  header h3 {
+    margin: auto;
+    border-bottom: 4px solid #814d18
+  }
+}
+
+
+
+
