@@ -2,6 +2,7 @@ import { Container, Grid, Typography } from "@mui/material";
 import News from "../components/News";
 
 export default function Home() {
+
     return(
         <Container>
             <Grid bgcolor={"#62462c"} padding={"20px"} borderRadius={"10px"} >

@@ -1,41 +1,39 @@
-
-import { Grid, Typography } from '@mui/material';
+import { Container, Grid, Typography } from '@mui/material';
 import MyCard  from '../components/MyCard';
-import { useState } from 'react';
-
-{/*let nextId = 0;
-const [foods,setFoodData] = useState([])
-foods.push({
-    id: nextId++,
-    name: "Bundás",
-});
-foods.push({
-    id: nextId++,
-    name: "Szendó",
-});
-foods.push({
-    id: nextId++,
-    name: "Pizza",
-});*/}
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 export default function Menu(){
+
+    const [menu, setMenu] = useState([]);
+     
+    const client = axios.create({
+   baseURL: '/api/MenuItems' 
+});
+
+useEffect(() => {
+    const fetchMenu = async () => {
+        let response = await client.get();
+        setMenu(response.data);
+    };
+    fetchMenu();
+ }, []);
+
+ /*useEffect(() => {
+    const fetchMenu = async () => {
+       const response = await fetch(
+          'api/MenuItems'
+       );
+       const data = await response.json();
+       console.log(data);
+       setMenu(data);
+    };
+    fetchMenu();
+ }, []);*/
+ 
     return(
-        <div>
-            <Grid container>
-                <Grid item xs={12} sm={6} md={4} lg={3}>
-                    <MyCard  />
-                </Grid>
-                <Grid item xs={12} sm={6} md={4} lg={3}>
-                    <MyCard />
-                </Grid>
-                <Grid item xs={12} sm={6} md={4} lg={3}>
-                    <MyCard />
-                </Grid>
-                <Grid item xs={12} sm={6} md={4} lg={3}>
-                    <MyCard />
-                </Grid>
-            </Grid>
-           
-        </div>
+        <Container>
+             <MyCard  items={menu} />
+       </Container>
     )
 }
